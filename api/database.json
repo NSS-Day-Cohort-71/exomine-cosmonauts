@@ -2,9 +2,9 @@
   "governors": [
     { "id": 1, "name": "Governor A", "active": true, "colonyId": 1 },
     { "id": 2, "name": "Governor B", "active": true, "colonyId": 2 },
-    { "id": 3, "name": "Governor C", "active": false, "colonyId": 3 },
+    { "id": 3, "name": "Governor C", "active": true, "colonyId": 3 },
     { "id": 4, "name": "Governor D", "active": true, "colonyId": 4 },
-    { "id": 5, "name": "Governor E", "active": false, "colonyId": 5 },
+    { "id": 5, "name": "Governor E", "active": true, "colonyId": 5 },
     { "id": 6, "name": "Governor F", "active": true, "colonyId": 6 }
   ],
   "colonies": [
