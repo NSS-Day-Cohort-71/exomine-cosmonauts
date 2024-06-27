@@ -19,9 +19,9 @@
   "facilities": [
     { "id": 1, "name": "Facility 1", "active": true },
     { "id": 2, "name": "Facility 2", "active": true },
-    { "id": 3, "name": "Facility 3", "active": false },
+    { "id": 3, "name": "Facility 3", "active": true },
     { "id": 4, "name": "Facility 4", "active": true },
-    { "id": 5, "name": "Facility 5", "active": false },
+    { "id": 5, "name": "Facility 5", "active": true },
     { "id": 6, "name": "Facility 6", "active": true }
   ],
   "facilityMinerals": [
