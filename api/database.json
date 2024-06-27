@@ -1,4 +1,51 @@
 {
-    "minerals":[],
-    "facilityMinerals": []
+
+  "governors": [
+    { "id": 1, "name": "Governor A", "active": true, "colonyId": 1 },
+    { "id": 2, "name": "Governor B", "active": true, "colonyId": 2 },
+    { "id": 3, "name": "Governor C", "active": true, "colonyId": 3 },
+    { "id": 4, "name": "Governor D", "active": true, "colonyId": 4 },
+    { "id": 5, "name": "Governor E", "active": true, "colonyId": 5 },
+    { "id": 6, "name": "Governor F", "active": true, "colonyId": 6 }
+  ],
+  "colonies": [
+    { "id": 1, "name": "Colony Alpha" },
+    { "id": 2, "name": "Colony Beta" },
+    { "id": 3, "name": "Colony Gamma" },
+    { "id": 4, "name": "Colony Delta" },
+    { "id": 5, "name": "Colony Epsilon" },
+    { "id": 6, "name": "Colony Zeta" }
+  ],
+  "facilities": [
+    { "id": 1, "name": "Facility 1", "active": true },
+    { "id": 2, "name": "Facility 2", "active": true },
+    { "id": 3, "name": "Facility 3", "active": false },
+    { "id": 4, "name": "Facility 4", "active": true },
+    { "id": 5, "name": "Facility 5", "active": false },
+    { "id": 6, "name": "Facility 6", "active": true }
+  ],
+  "facilityMinerals": [
+    { "id": 1, "facilityId": 1, "mineralId": 1, "mineralAmount": 100 },
+    { "id": 2, "facilityId": 2, "mineralId": 2, "mineralAmount": 200 },
+    { "id": 3, "facilityId": 3, "mineralId": 3, "mineralAmount": 300 },
+    { "id": 4, "facilityId": 4, "mineralId": 4, "mineralAmount": 400 },
+    { "id": 5, "facilityId": 5, "mineralId": 5, "mineralAmount": 500 },
+    { "id": 6, "facilityId": 6, "mineralId": 6, "mineralAmount": 600 }
+  ],
+  "minerals": [
+    { "id": 1, "name": "Iron" },
+    { "id": 2, "name": "Copper" },
+    { "id": 3, "name": "Gold" },
+    { "id": 4, "name": "Silver" },
+    { "id": 5, "name": "Platinum" },
+    { "id": 6, "name": "Uranium" }
+  ],
+  "colonyMinerals": [
+    { "id": 1, "colonyId": 1, "mineralId": 1, "mineralAmount": 1000 },
+    { "id": 2, "colonyId": 2, "mineralId": 2, "mineralAmount": 2000 },
+    { "id": 3, "colonyId": 3, "mineralId": 3, "mineralAmount": 3000 },
+    { "id": 4, "colonyId": 4, "mineralId": 4, "mineralAmount": 4000 },
+    { "id": 5, "colonyId": 5, "mineralId": 5, "mineralAmount": 5000 },
+    { "id": 6, "colonyId": 6, "mineralId": 6, "mineralAmount": 6000 }
+  ]
 }
