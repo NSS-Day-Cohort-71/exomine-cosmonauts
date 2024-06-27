@@ -1,3 +1,17 @@
+//inital colonyMinerals
+//colonyId = 0
+//mineralId = 0
+//mineralAmount = 0
+
+//initial facilityMinerals
+//facilityId = 0
+//mineralId = 0
+//mineralAmount = 0 
+
+
+
+
+
 const state = {
 
 }
