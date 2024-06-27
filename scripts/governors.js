@@ -6,7 +6,7 @@
 
     //save governor data to a varaible
 
-    //set variable html <h2>Choose governor</h2> <select name="governors">
+    //set variable html <h2>Choose governor</h2> <select name="governors" id="governorSelect">
                     //<option disabled selected>Choose governor</option>
 
     //map governors array
@@ -18,6 +18,8 @@
 
     //return html
 
-//define event listener
+//define event listener handleGovernorChoice
     //if target name === governors
     //setGovernor(parseInt(governorId))
+    //document.getElementById("facilitySelect").diabled = !this.value
+    //invoke getColonyMinerals()

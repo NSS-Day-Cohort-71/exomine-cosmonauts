@@ -6,7 +6,7 @@
 
     //save facility data to a varaible
 
-    //set variable html <h2>Choose facility</h2> <select name= facility">
+    //set variable html <h2>Choose facility</h2> <select id="facilitySelect" name= facility" disabled>
                     //<option disabled selected>Choose facility</option>
 
     //map facilitys array
@@ -20,4 +20,5 @@
 
 //define event listener
     //if target name === facility
-    //se facility(parseInt facilityId))
+    //setFacility(parseInt facilityId))
+    //invoke getFacilityMinerals()
