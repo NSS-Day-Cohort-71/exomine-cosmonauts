@@ -1,0 +1,1 @@
+//dont forget to expand colony and mineral!!!!!
