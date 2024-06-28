@@ -1,12 +1,14 @@
 //import governor data from governor manager
 
+import { colonyMineralList } from "./colonyMinerals.js";
 import { getGovernors } from "./managers/governorManager.js";
+import { setColonyId } from "./TransientState.js";
 
 //define a function to get HTML for governor select element
 
 export const governorsList = async () => {
     //add change event listener handleGovernorChoice
-    // document.addEventListener("change", handleGovernorChoice)
+    document.addEventListener("change", handleGovernorChoice)
     //save governor data to a varaible
     const governors = await getGovernors()
 
@@ -33,8 +35,13 @@ export const governorsList = async () => {
 
     
 
-//define event listener handleGovernorChoice
-    //if target name === governors
-    //setGovernor(parseInt(governorId))
-    //document.getElementById("facilitySelect").diabled = !this.value
-    //invoke getColonyMinerals()
+const handleGovernorChoice = async (e) => {
+    if (e.target.name === "governors") {
+        setColonyId(parseInt(e.target.value))
+        document.getElementById("facilitySelect").disabled = false
+    //invoke getColonyMinerals
+        document.getElementById("colonyMineralContainer").innerHTML = await colonyMineralList()
+    }
+    
+}
+    
