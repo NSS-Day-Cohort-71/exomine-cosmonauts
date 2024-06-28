@@ -3,10 +3,20 @@
 //mineralId = 0
 //mineralAmount = 0
 
+export const colonyState = {
+    "colonyId": 0,
+    "mineralId": 0,
+    "mineralAmount": 0
+}
+
 //initial facilityMinerals
 //facilityId = 0
 //mineralId = 0
 //mineralAmount = 0 
+
+export const setColonyId = (id) => {
+    colonyState.colonyId = id
+}
 
 
 

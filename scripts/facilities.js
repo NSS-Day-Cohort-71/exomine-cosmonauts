@@ -10,7 +10,7 @@ export const facilityList = async () => {
                     //<option disabled selected>Choose facility</option>
     let html = `
                 <h2>Choose facility</h2>
-                <select id="facilitySelect" name="facility">
+                <select id="facilitySelect" name="facility" disabled>
                 <option disabled selected>Choose facility</option> 
     `
     //map facilitys array

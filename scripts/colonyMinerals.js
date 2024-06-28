@@ -7,16 +7,31 @@
 //list mineral inventory
 //-------------------------------
 
-//import governor data from manager
+
 //import colonyMinerals data from manager
+import { getColonyMinerals } from "./managers/colonyMineralsManager.js";
+import { colonyState } from "./TransientState.js";
 
 
-//define getColonyMinerals
+//define colonyMineralList
 
-    //set governors to variable
-    //set colonyMinerals to variable
+export const colonyMineralList = async () => {
+     //set colonyMinerals to variable
+    const colonyMinerals = await getColonyMinerals()
 
-    //if transientState.colonyId = colonyMinerals.colonyId
+    const colonyMineralHTML = colonyMinerals.map(mineral => {
+        //if transientState.colonyId = colonyMinerals.colonyId
+        if (colonyState.colonyId === mineral.colonyId) {
+            return `
+                <h2>${mineral.colony.name}</h2>
+                <div>${mineral.mineralAmount} tons of ${mineral.mineral.name}</div>
+            `
+        }
+    }).join("")
+
+    return colonyMineralHTML
+
+    
 
         //document.getElementbyId(colonyMinerals).textContent = colonyMinerals.colony.name
 
@@ -24,3 +39,8 @@
         //print colonyMinerals.mineral.name
         //print colonyMinerals.mineralAmount
         //<ul>
+
+}
+
+    
+   
