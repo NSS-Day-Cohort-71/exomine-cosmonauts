@@ -14,8 +14,18 @@ export const colonyState = {
 //mineralId = 0
 //mineralAmount = 0 
 
+export const facilityState = {
+    "facilityId": 0,
+    "mineralId": 0,
+    "mineralAmount": 0
+}
+
 export const setColonyId = (id) => {
     colonyState.colonyId = id
+}
+
+export const setFacilityId = (id) => {
+    facilityState.facilityId = id
 }
 
 
