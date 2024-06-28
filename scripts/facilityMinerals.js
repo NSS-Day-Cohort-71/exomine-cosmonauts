@@ -1,7 +1,9 @@
 import { getFacilityMinerals } from "./managers/facilityMineralsManager.js"
-import { facilityState } from "./TransientState.js"
+import { facilityState, setMineralId } from "./TransientState.js"
 
 export const facilityMineralList = async () => {
+
+    document.addEventListener("change", handleMineralChoice)
     //set facilityMinerals to variable
    const facilityMinerals = await getFacilityMinerals()
 
@@ -12,10 +14,17 @@ export const facilityMineralList = async () => {
         
            return `
                <h2>${facility.facility.name}</h2>
-               <input type="radio" name="facilityMineral">${facility.mineralAmount} tons of ${facility.mineral.name}</input>
+               <input type="radio" name="facilityMineral" value="${facility.mineralId}" data-mineral="${facility.mineral.name}" data-facility="${facility.facility.name}">${facility.mineralAmount} tons of ${facility.mineral.name}</input>
            `
        }
    }).join("")
 
    return facilityMineralHTML 
+}
+
+export const handleMineralChoice = (e) => {
+    if (e.target.name="facilityMineral") {
+        setMineralId(e.target.value)
+        document.getElementById("mineralsInCart").innerHTML = `1 ton of ${e.target.dataset.mineral} from ${e.target.dataset.facility}`
+    }
 }

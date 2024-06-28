@@ -28,6 +28,13 @@ export const setFacilityId = (id) => {
     facilityState.facilityId = id
 }
 
+export const setMineralId = (id) => {
+    colonyState.mineralId = id
+    facilityState.mineralId = id
+    console.log(colonyState)
+    console.log(facilityState)
+}
+
 
 
 
