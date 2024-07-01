@@ -27,10 +27,10 @@ return facilityMineralHTML;
 
 
 export const handleMineralChoice = (e) => {
+    let mineralsInCart = document.getElementById("mineralInCart")
+    mineralsInCart.innerHTML = ``
   if ((e.target.name = "facilityMineral")) {
     setMineralId(e.target.value);
-    document.getElementById(
-      "mineralsInCart"
-    ).innerHTML = `1 ton of ${e.target.dataset.mineral} from ${e.target.dataset.facility}`;
+    mineralsInCart.innerHTML = `1 ton of ${e.target.dataset.mineral} from ${e.target.dataset.facility}`;
   }
 };
