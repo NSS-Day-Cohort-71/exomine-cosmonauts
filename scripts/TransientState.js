@@ -3,7 +3,7 @@
 //mineralId = 0
 //mineralAmount = 0
 
-export const colonyMineralState = {
+export const colonyState = {
     "id": 0,
     "colonyId": 0,
     "mineralId": 0,
@@ -15,7 +15,7 @@ export const colonyMineralState = {
 //mineralId = 0
 //mineralAmount = 0 
 
-export const facilityMineralState = {
+export const facilityState = {
     "id": 0,
     "facilityId": 0,
     "mineralId": 0,
@@ -23,15 +23,15 @@ export const facilityMineralState = {
 }
 
 export const setColonyId = (id) => {
-    colonyMineralState.colonyId = id
+    colonyState.colonyId = id
 }
 
 export const setColonyMineralId = (id) => {
-    colonyMineralState.id = id
+    colonyState.id = id
 }
 
 export const setColonyMineralAmount = (amount) => {
-    colonyMineralState.mineralAmount = amount
+    colonyState.mineralAmount = amount
 }
 
 export const setFacilityId = (id) => {
@@ -39,11 +39,11 @@ export const setFacilityId = (id) => {
 }
 
 export const setFacilityMineralId = (id) => {
-    facilityMineralState.id = id
+    facilityState.id = id
 }
 
 export const setFacilityMineralAmount = (amount) => {
-    facilityMineralState.mineralAmount = amount
+    facilityState.mineralAmount = amount
 }
 
 export const setMineralId = (id) => {
@@ -54,11 +54,11 @@ export const setMineralId = (id) => {
 }
 
 export const incrementColonyMineralAmount = (amount) => {
-    colonyMineralState.mineralAmount = amount++
+    colonyState.mineralAmount = amount++
 }
 
 export const decrementFacilityMineralAmount = (amount) => {
-    facilityMineralState.mineralAmount = amount--
+    facilityState.mineralAmount = amount--
 }
 
 
@@ -71,20 +71,32 @@ export const purchaseMineral = async () => {
     // 'POST' fetch method is used to create a new resource
     // 'PUT' fetch method is used to update an existing resource
     // OR create a resource if it does not exist at a specific URL
-
-    // create 'PUT' request for facilityMineralState
-    const facilityMineralPutOptions = {
-        method: "POST",
+    const colonyMineralPutOptions = {
+        method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(facilityMineralState)
+        body: JSON.stringify(colonyState)
+    }
+
+    const colonyMineralPutOptionsFetch = await fetch(
+        'http://localhost:8088/colonyMinerals',
+        colonyMineralPutOptions
+    )
+    // create 'PUT' request for facilityMineralState
+    const facilityMineralPutOptions = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(facilityState)
     }
 
     const facilityMineralPutOptionsFetch = await fetch(
         'http://localhost:8088/facilityMinerals',
         facilityMineralPutOptions
     )
+
     // 'PUT' request for colonyMineralState
     
     /*

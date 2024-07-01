@@ -1,3 +1,5 @@
+import { decrementFacilityMineralAmount, incrementColonyMineralAmount, purchaseMineral } from "./TransientState.js"
+
 export const spaceCartElement = async () => {
     
         return `
