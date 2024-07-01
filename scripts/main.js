@@ -1,8 +1,8 @@
 //governor select html
 
-import { facilityList } from "./facilities.js"
-import { governorsList } from "./governors.js"
-import { spaceCartElement } from "./spaceCart.js"
+import { facilityList } from "./facilities.js";
+import { governorsList } from "./governors.js";
+import { spaceCartElement } from "./spaceCart.js";
 
 //facility select html
 
@@ -10,9 +10,10 @@ import { spaceCartElement } from "./spaceCart.js"
 
 //------
 
-const mainHTML = document.querySelector("#main-container")
+const render = async () => {
+  const mainHTML = document.querySelector("#main-container");
 
-mainHTML.innerHTML = `
+  mainHTML.innerHTML = `
     <div id="governor-colony-container">
         ${await governorsList()}
         <div id="colonyMineralContainer">
@@ -28,4 +29,16 @@ mainHTML.innerHTML = `
     </div>
 
     ${await spaceCartElement()}
-`
+`;
+  //reRender once the purchaseMineral is clicked
+  document.querySelector("#purchaseMineral").addEventListener("click", () => {
+    render();
+  });
+};
+
+//first render
+render();
+
+document.addEventListener("stateChanged", () => {
+  render();
+});

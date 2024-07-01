@@ -1,7 +1,10 @@
-import { getFacilityMinerals } from "./managers/facilityMineralsManager.js"
-import { facilityState, setMineralId } from "./TransientState.js"
+import { getFacilityMinerals } from "./managers/facilityMineralsManager.js";
+import { facilityState, setMineralId } from "./TransientState.js";
 
 export const facilityMineralList = async () => {
+  document.addEventListener("change", handleMineralChoice);
+  //set facilityMinerals to variable
+  const facilityMinerals = await getFacilityMinerals();
 
     document.addEventListener("change", handleMineralChoice)
     //set facilityMinerals to variable
@@ -26,9 +29,12 @@ return facilityMineralHTML;
 
 }
 
+
 export const handleMineralChoice = (e) => {
-    if (e.target.name="facilityMineral") {
-        setMineralId(e.target.value)
-        document.getElementById("mineralsInCart").innerHTML = `1 ton of ${e.target.dataset.mineral} from ${e.target.dataset.facility}`
-    }
-}
+  if ((e.target.name = "facilityMineral")) {
+    setMineralId(e.target.value);
+    document.getElementById(
+      "mineralsInCart"
+    ).innerHTML = `1 ton of ${e.target.dataset.mineral} from ${e.target.dataset.facility}`;
+  }
+};
