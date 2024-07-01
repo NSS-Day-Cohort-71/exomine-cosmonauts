@@ -79,8 +79,10 @@ export const purchaseMineral = async () => {
         body: JSON.stringify(colonyState)
     }
 
+    const apiColonyMineralURL = `http://localhost:8088/colonyMinerals/${colonyState.id}`
+
     const colonyMineralPutOptionsFetch = await fetch(
-        "http://localhost:8088/colonyMinerals",
+        apiColonyMineralURL,
         colonyMineralPutOptions
     )
     // create 'PUT' request for facilityMineralState
@@ -92,8 +94,9 @@ export const purchaseMineral = async () => {
         body: JSON.stringify(facilityState)
     }
 
+    const apiFacilityMineralURL = `http://localhost:8088/facilityMinerals/${facilityState.id}`
     const facilityMineralPutOptionsFetch = await fetch(
-        "http://localhost:8088/facilityMinerals",
+        apiFacilityMineralURL,
         facilityMineralPutOptions
     )
 
