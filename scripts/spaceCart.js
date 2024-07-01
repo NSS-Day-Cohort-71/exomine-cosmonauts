@@ -1,5 +1,3 @@
-
-
 export const spaceCartElement = async () => {
     
         return `
@@ -11,4 +9,10 @@ export const spaceCartElement = async () => {
     ` 
 }
 
-    
+const handlePurchaseMineralClick = (e) => {
+    if (e.target.id === "purchaseMineral") {
+        incrementColonyMineralAmount()
+        decrementFacilityMineralAmount()
+        purchaseMineral()
+    }
+}
