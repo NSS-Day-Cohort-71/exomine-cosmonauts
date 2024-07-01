@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+}
+body {
+    background-color: rgb(29, 16, 97);
+    margin: 0;
+}
+
+h1 {
+    color: rgb(29, 16, 97);
+    font-size: 60px;
+    text-shadow: 1px 1px #fbc25e;
+}
+
+h2 {
+    /* color: rgb(249, 216, 108); */
+    color: #f7ad2d;
+    text-shadow: 1px 2px rgb(88, 58, 235);
+}
+
+header {
+    background-image: url("../images/spaceMinerals.png");
+    height: 200px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#governor-colony-container {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#governor-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#governorSelect {
+    height: 40px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 5px 20px;
+    background-color: rgb(38, 240, 173);
+}
+
+#governorSelect:hover {
+    cursor: pointer;
+    background-color: aquamarine;
+}
+
+#colonyMineralContainer {
+    color: white;
+}
+
+#facility-container {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#facility-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#facilitySelect {
+    height: 40px;
+    text-align: center;
+    padding: 5px 20px;
+    background-color: rgb(38, 240, 173);
+}
+
+
+#facilitySelect:hover {
+    cursor: pointer;
+    background-color: aquamarine;
+}
+
+#facilityMineralContainer {
+    text-align: center;
+    color: white;
+}
+
+#space-cart-container {
+    background-image: url('../images/spaceMinerals5.jpg');
+    background-size: cover;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#space-cart-container h2 {
+    color: #f7ad2d;
+    font-size: 40px;
+    /* text-shadow: rgb(88, 58, 235); */
+    /* margin: 10px 0; */
+    height: 100px;
+    text-shadow: 2px 2px rgb(88, 58, 235);
+}
+
+#mineralsInCart {
+    font-size: 30px;
+    font-weight: bold;
+    /* color:rgb(29, 16, 97); */
+    /* color: rgb(88, 58, 235); */
+    color: white;
+    height: 100px;
+    /* box-shadow: 2px 4px 6px rgb(88, 58, 235); */
+}
+
+#purchaseMineral {
+    max-width: 40%;
+    /* background-color: rgb(63, 225, 187); */
+    background-color: aquamarine;
+    /* background-color: rgb(0, 229, 255); */
+    /* border: 1px solid rgb(247, 173, 45); */
+    border: none;
+    font-weight: bold;
+    font-size: 25px;
+    /* color: rgb(29, 16, 97); */
+    color: rgb(88, 58, 235);
+    padding: 8px 30px;
+    border-radius: 4px;
+    margin: 10px 0;
+    height: 80px;
+}
+
+#purchaseMineral:hover {
+    cursor: pointer;
+    background-color:#f7ad2d;
+}
+

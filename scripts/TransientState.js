@@ -35,10 +35,6 @@ export const setMineralId = (id) => {
     console.log(facilityState)
 }
 
-
-
-
-
 const state = {
 
 }

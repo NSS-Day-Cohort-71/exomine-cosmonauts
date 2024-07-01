@@ -15,6 +15,7 @@ export const governorsList = async () => {
     //set variable html <h2>Choose governor</h2> <select name="governors" id="governorSelect">
                     //<option disabled selected>Choose governor</option>
     let html = `
+            <div id="governor-label">
                 <h2>Choose a governor</h2>
                 <select name="governors" id="governorSelect">
                 <option disabled selected>Choose a governor</option>
@@ -28,7 +29,7 @@ export const governorsList = async () => {
 
     html+= governorHTML
     //close select
-    html += `</select>`
+    html += `</select></div>`
     //return html
     return html
 }
@@ -42,6 +43,6 @@ const handleGovernorChoice = async (e) => {
     //invoke getColonyMinerals
         document.getElementById("colonyMineralContainer").innerHTML = await colonyMineralList()
     }
-    
+
 }
     
