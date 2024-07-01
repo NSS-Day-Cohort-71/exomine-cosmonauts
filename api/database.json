@@ -6,7 +6,8 @@
     { "id": 3, "name": "Luna Nebula", "active": true, "colonyId": 3 },
     { "id": 4, "name": "Zephyr Galaxis", "active": true, "colonyId": 4 },
     { "id": 5, "name": "Cyra Quasar", "active": true, "colonyId": 5 },
-    { "id": 6, "name": "Kian Andromeda", "active": true, "colonyId": 6 }
+    { "id": 6, "name": "Kian Andromeda", "active": true, "colonyId": 6 },
+    { "id": 7, "name": "Bogdan Farflungus", "active": false, "colonyId": 1}
   ],
   "colonies": [
     { "id": 1, "name": "Aurora Haven" },
