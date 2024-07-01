@@ -18,6 +18,8 @@ export const facilityMineralList = async () => {
         } else {
             html += `<div><input type="radio" name="facilityMineral" value="${facility.mineralId}" data-mineral="${facility.mineral.name}" data-facility="${facility.facility.name}">${facility.mineralAmount} tons of ${facility.mineral.name}</input></div>`;
         }
+        facilityState.mineralAmount = facility.mineralAmount
+        facilityState.id = facility.id
         return html;
     }, '');
 
@@ -27,7 +29,7 @@ return facilityMineralHTML;
 
 
 export const handleMineralChoice = (e) => {
-    let mineralsInCart = document.getElementById("mineralInCart")
+    let mineralsInCart = document.getElementById("mineralsInCart")
     mineralsInCart.innerHTML = ``
   if ((e.target.name = "facilityMineral")) {
     setMineralId(e.target.value);

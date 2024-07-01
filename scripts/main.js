@@ -32,6 +32,11 @@ const render = async () => {
 `;
   //reRender once the purchaseMineral is clicked
   document.querySelector("#purchaseMineral").addEventListener("click", () => {
+    // if (e.target.id === "purchaseMineral") {
+    //     incrementColonyMineralAmount()
+    //     decrementFacilityMineralAmount()
+    //     purchaseMineral()
+    // }
     render();
   });
 };

@@ -22,6 +22,8 @@ export const colonyMineralList = async () => {
     const colonyMineralHTML = colonyMinerals.map(mineral => {
         //if transientState.colonyId = colonyMinerals.colonyId
         if (colonyState.colonyId === mineral.colonyId) {
+            colonyState.mineralAmount = mineral.mineralAmount
+            colonyState.id = mineral.id
             return `
                 <h2>${mineral.colony.name}</h2>
                 <div>${mineral.mineralAmount} tons of ${mineral.mineral.name}</div>

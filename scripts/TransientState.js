@@ -4,6 +4,7 @@
 //mineralAmount = 0
 
 export const colonyState = {
+    "id": 0,
     "colonyId": 0,
     "mineralId": 0,
     "mineralAmount": 0
@@ -15,6 +16,7 @@ export const colonyState = {
 //mineralAmount = 0 
 
 export const facilityState = {
+    "id": 0,
     "facilityId": 0,
     "mineralId": 0,
     "mineralAmount": 0
@@ -24,27 +26,79 @@ export const setColonyId = (id) => {
     colonyState.colonyId = id
 }
 
+export const setColonyMineralId = (id) => {
+    colonyState.id = id
+}
+
+export const setColonyMineralAmount = (amount) => {
+    colonyState.mineralAmount = parseInt(amount)
+}
+
 export const setFacilityId = (id) => {
     facilityState.facilityId = id
 }
 
+export const setFacilityMineralId = (id) => {
+    facilityState.id = id
+}
+
+export const setFacilityMineralAmount = (amount) => {
+    facilityState.mineralAmount = amount
+}
+
 export const setMineralId = (id) => {
-    colonyState.mineralId = id
-    facilityState.mineralId = id
+    colonyState.mineralId = parseInt(id)
+    facilityState.mineralId = parseInt(id)
     console.log(colonyState)
     console.log(facilityState)
 }
 
-const state = {
-
+export const incrementColonyMineralAmount = (amount) => {
+    colonyState.mineralAmount = amount + 1
 }
+
+export const decrementFacilityMineralAmount = (amount) => {
+    facilityState.mineralAmount = amount - 1
+}
+
 
 export const setFacility = (facilityId) => {
     state.selectedFacility = facilityId
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-export const purchaseMineral = () => {
+export const purchaseMineral = async () => {
+    // 'POST' fetch method is used to create a new resource
+    // 'PUT' fetch method is used to update an existing resource
+    // OR create a resource if it does not exist at a specific URL
+    const colonyMineralPutOptions = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(colonyState)
+    }
+
+    const colonyMineralPutOptionsFetch = await fetch(
+        "http://localhost:8088/colonyMinerals",
+        colonyMineralPutOptions
+    )
+    // create 'PUT' request for facilityMineralState
+    const facilityMineralPutOptions = {
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(facilityState)
+    }
+
+    const facilityMineralPutOptionsFetch = await fetch(
+        "http://localhost:8088/facilityMinerals",
+        facilityMineralPutOptions
+    )
+
+    // 'PUT' request for colonyMineralState
+    
     /*
         Does the chosen governor's colony already own some of this mineral?
             - If yes, what should happen?
