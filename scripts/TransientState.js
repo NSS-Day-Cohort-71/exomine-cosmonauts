@@ -53,12 +53,12 @@ export const setMineralId = (id) => {
     console.log(facilityState)
 }
 
-export const incrementColonyMineralAmount = (amount) => {
-    colonyState.mineralAmount = amount + 1
+export const incrementColonyMineralAmount = () => {
+    colonyState.mineralAmount++
 }
 
-export const decrementFacilityMineralAmount = (amount) => {
-    facilityState.mineralAmount = amount - 1
+export const decrementFacilityMineralAmount = () => {
+    facilityState.mineralAmount--
 }
 
 
