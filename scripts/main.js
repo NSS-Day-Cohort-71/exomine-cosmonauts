@@ -13,14 +13,19 @@ import { spaceCartElement } from "./spaceCart.js"
 const mainHTML = document.querySelector("#main-container")
 
 mainHTML.innerHTML = `
-${await governorsList()}
-${await facilityList()}
-    <div id="colonyMineralContainer">
+    <div id="governor-colony-container">
+        ${await governorsList()}
+        <div id="colonyMineralContainer">
             <h2>Colony Minerals</h2>
         </div>
+    </div>
     
+    <div id="facility-container">
+        ${await facilityList()}
         <div id="facilityMineralContainer">
             <h2>Facility Minerals</h2>
         </div>
-${await spaceCartElement()}
+    </div>
+
+    ${await spaceCartElement()}
 `

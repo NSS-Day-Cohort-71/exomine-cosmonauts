@@ -1,0 +1,14 @@
+@import "layout.css";
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap');
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: "Advent Pro", sans-serif;
+	font-size: 20px;
+	line-height: 2;
+    letter-spacing: 2px;
+    font-weight: lighter;
+}
