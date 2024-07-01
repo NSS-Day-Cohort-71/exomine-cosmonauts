@@ -6,10 +6,6 @@ export const facilityMineralList = async () => {
   //set facilityMinerals to variable
   const facilityMinerals = await getFacilityMinerals();
 
-    document.addEventListener("change", handleMineralChoice)
-    //set facilityMinerals to variable
-   const facilityMinerals = await getFacilityMinerals()
-
 
    const facilityMineralHTML = facilityMinerals
     .filter(facility => facilityState.facilityId === facility.facilityId)
