@@ -31,7 +31,7 @@ export const setColonyMineralId = (id) => {
 }
 
 export const setColonyMineralAmount = (amount) => {
-    colonyState.mineralAmount = amount
+    colonyState.mineralAmount = parseInt(amount)
 }
 
 export const setFacilityId = (id) => {
@@ -47,18 +47,18 @@ export const setFacilityMineralAmount = (amount) => {
 }
 
 export const setMineralId = (id) => {
-    colonyState.mineralId = id
-    facilityState.mineralId = id
+    colonyState.mineralId = parseInt(id)
+    facilityState.mineralId = parseInt(id)
     console.log(colonyState)
     console.log(facilityState)
 }
 
 export const incrementColonyMineralAmount = (amount) => {
-    colonyState.mineralAmount = amount++
+    colonyState.mineralAmount = amount + 1
 }
 
 export const decrementFacilityMineralAmount = (amount) => {
-    facilityState.mineralAmount = amount--
+    facilityState.mineralAmount = amount - 1
 }
 
 
@@ -80,12 +80,12 @@ export const purchaseMineral = async () => {
     }
 
     const colonyMineralPutOptionsFetch = await fetch(
-        'http://localhost:8088/colonyMinerals',
+        "http://localhost:8088/colonyMinerals",
         colonyMineralPutOptions
     )
     // create 'PUT' request for facilityMineralState
     const facilityMineralPutOptions = {
-        method: "PUT",
+        method: 'PUT',
         headers: {
             "Content-Type": "application/json"
         },
@@ -93,7 +93,7 @@ export const purchaseMineral = async () => {
     }
 
     const facilityMineralPutOptionsFetch = await fetch(
-        'http://localhost:8088/facilityMinerals',
+        "http://localhost:8088/facilityMinerals",
         facilityMineralPutOptions
     )
 

@@ -29,7 +29,7 @@ return facilityMineralHTML;
 
 
 export const handleMineralChoice = (e) => {
-    let mineralsInCart = document.getElementById("mineralInCart")
+    let mineralsInCart = document.getElementById("mineralsInCart")
     mineralsInCart.innerHTML = ``
   if ((e.target.name = "facilityMineral")) {
     setMineralId(e.target.value);
