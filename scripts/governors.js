@@ -22,17 +22,21 @@ export const governorsList = async () => {
     `
     //map governors array
     const governorHTML = governors.map(governor => {
-        //return <option value="colonyId">Governor Name</option>
-        return `<option value="${governor.colonyId}">${governor.name}</option>`
+        if (governor.active === true) {
+            //return <option value="colonyId">Governor Name</option>
+            return `<option value="${governor.colonyId}">${governor.name}</option>` }
         //join map
     }).join("")
-
     html+= governorHTML
     //close select
     html += `</select></div>`
     //return html
     return html
 }
+        
+
+   
+
 
     
 
