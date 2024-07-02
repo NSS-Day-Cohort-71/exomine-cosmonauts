@@ -36,3 +36,4 @@ export const handleMineralChoice = (e) => {
     mineralsInCart.innerHTML = `1 ton of ${e.target.dataset.mineral} from ${e.target.dataset.facility}`;
   }
 };
+

@@ -1,4 +1,4 @@
-import { decrementFacilityMineralAmount, incrementColonyMineralAmount, purchaseMineral, purchseFromSpaceCart } from "./TransientState.js"
+import { decrementFacilityMineralAmount, incrementColonyMineralAmount, purchseFromSpaceCart } from "./TransientState.js"
 
 export const spaceCartElement = async () => {
     document.addEventListener("click", handlePurchaseMineralClick)
@@ -17,6 +17,12 @@ const handlePurchaseMineralClick = (e) => {
         incrementColonyMineralAmount()
         decrementFacilityMineralAmount()
         purchseFromSpaceCart()
+        clearSpaceCart()
     }
+}
+
+const clearSpaceCart = () => {
+    const mineralsInCart = document.querySelector('#mineralsInCart')
+    mineralsInCart.innerHTML = ""
 }
 

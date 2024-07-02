@@ -1,5 +1,4 @@
 //governor select html
-
 import { facilityList } from "./facilities.js";
 import { governorsList } from "./governors.js";
 import { spaceCartElement } from "./spaceCart.js";
@@ -12,6 +11,7 @@ import { spaceCartElement } from "./spaceCart.js";
 
 const render = async () => {
   const mainHTML = document.querySelector("#main-container");
+  const governorHTML = document.querySelector("#governor-colony-container")
 
   mainHTML.innerHTML = `
     <div id="governor-colony-container">
@@ -31,19 +31,22 @@ const render = async () => {
     ${await spaceCartElement()}
 `;
   //reRender once the purchaseMineral is clicked
-  document.querySelector("#purchaseMineral").addEventListener("click", () => {
-    // if (e.target.id === "purchaseMineral") {
-    //     incrementColonyMineralAmount()
-    //     decrementFacilityMineralAmount()
-    //     purchaseMineral()
-    // }
-    render();
-  });
+//   document.querySelector("#purchaseMineral").addEventListener("click", () => {
+//     render();
+//   });
 };
 
 //first render
 render();
 
 document.addEventListener("stateChanged", () => {
-  render();
+    
+    
+    
+//   render();
 });
+
+
+
+
+
