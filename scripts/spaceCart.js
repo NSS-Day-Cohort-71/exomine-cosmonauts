@@ -1,4 +1,4 @@
-import { decrementFacilityMineralAmount, incrementColonyMineralAmount, purchaseMineral } from "./TransientState.js"
+import { decrementFacilityMineralAmount, incrementColonyMineralAmount, purchaseMineral, purchseFromSpaceCart } from "./TransientState.js"
 
 export const spaceCartElement = async () => {
     document.addEventListener("click", handlePurchaseMineralClick)
@@ -16,7 +16,7 @@ const handlePurchaseMineralClick = (e) => {
     if (e.target.id === "purchaseMineral") {
         incrementColonyMineralAmount()
         decrementFacilityMineralAmount()
-        purchaseMineral()
+        purchseFromSpaceCart()
     }
 }
 
