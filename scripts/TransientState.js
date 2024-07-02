@@ -125,9 +125,22 @@ export const setFacility = (facilityId) => {
 export const purchseFromSpaceCart = async () => {
     const colonyMinerals = await getColonyMinerals()
 
-    const inventory = colonyMinerals.map(inventory => inventory.mineralId)
+    const inventory = colonyMinerals.filter(inventory => inventory.colonyId === colonyState.colonyId)
 
-    if (!inventory.includes(colonyState.mineralId)) {
+    const hasMineral = inventory.some(item => item.mineralId === colonyState.mineralId)
+
+    if (hasMineral) {
+        const colonyMineralPutOptions = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(colonyState)
+        }
+
+        const colonyPutResponse = await fetch(`http://localhost:8088/colonyMinerals/${colonyState.id}`, colonyMineralPutOptions)
+    
+    } else if (!hasMineral) {
         colonyState = {
             "colonyId": colonyState.colonyId,
             "mineralId": colonyState.mineralId,
@@ -144,17 +157,8 @@ export const purchseFromSpaceCart = async () => {
 
         const colonyPostResponse = await fetch("http://localhost:8088/colonyMinerals", colonyMineralPostOptions)
         
-    } else {
-        const colonyMineralPutOptions = {
-            method: "Put",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(colonyState)
-        }
-
-        const colonyPutResponse = await fetch(`http://localhost:8088/colonyMinerals/${colonyState.id}`, colonyMineralPutOptions)
-    }
+    } 
+    
 
     const facilityMineralPutOptions = {
         method: 'PUT',
