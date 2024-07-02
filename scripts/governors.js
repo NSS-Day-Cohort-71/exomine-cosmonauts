@@ -46,13 +46,13 @@ const handleGovernorChoice = async (e) => {
         setColonyId(parseInt(e.target.value))
         document.getElementById("facilitySelect").disabled = false
     //invoke getColonyMinerals
-        document.getElementById("colonyMineralContainer").innerHTML = await colonyMineralList()
+        await displayColonyMineralList()
     }
 
 }
-    
-document.addEventListener("change", handleGovernorChoice)
 
-const displayGovColonyMinerals = () => {
+document.addEventListener("change", handleGovernorChoice)
     
+export const displayColonyMineralList = async () => {
+    document.getElementById("colonyMineralContainer").innerHTML = await colonyMineralList()
 }
