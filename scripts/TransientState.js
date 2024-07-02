@@ -127,7 +127,7 @@ export const purchseFromSpaceCart = async () => {
 
     const inventory = colonyMinerals.map(inventory => inventory.mineralId)
 
-    if (!inventory.includes(colonyState.mineralId)) {
+    if (!inventory.includes(colonyState.mineralId) && inventory.colonyId === colonyState.colonyId) {
         colonyState = {
             "colonyId": colonyState.colonyId,
             "mineralId": colonyState.mineralId,
