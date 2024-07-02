@@ -1,5 +1,5 @@
 //governor select html
-import { facilityList } from "./facilities.js";
+import { displayFacilityList, facilityList } from "./facilities.js";
 import { governorsList } from "./governors.js";
 import { spaceCartElement } from "./spaceCart.js";
 
@@ -30,20 +30,13 @@ const render = async () => {
 
     ${await spaceCartElement()}
 `;
-  //reRender once the purchaseMineral is clicked
-//   document.querySelector("#purchaseMineral").addEventListener("click", () => {
-//     render();
-//   });
 };
 
 //first render
 render();
 
-document.addEventListener("stateChanged", () => {
-    
-    
-    
-//   render();
+document.addEventListener("stateChanged", async () => {
+    await displayFacilityList()
 });
 
 
