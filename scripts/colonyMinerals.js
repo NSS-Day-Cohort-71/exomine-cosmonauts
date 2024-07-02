@@ -19,14 +19,14 @@ export const colonyMineralList = async () => {
      //set colonyMinerals to variable
     const colonyMinerals = await getColonyMinerals()
 
-    const colonyMineralHTML = colonyMinerals.map(mineral => {
+    const colonyMineralHTML = colonyMinerals.map(inventory => {
         //if transientState.colonyId = colonyMinerals.colonyId
-        if (colonyState.colonyId === mineral.colonyId) {
-            colonyState.mineralAmount = mineral.mineralAmount
-            colonyState.id = mineral.id
+        if (colonyState.colonyId === inventory.colonyId) {
+            colonyState.mineralAmount = inventory.mineralAmount
+            colonyState.id = inventory.id
             return `
-                <h2>${mineral.colony.name}</h2>
-                <div>${mineral.mineralAmount} tons of ${mineral.mineral.name}</div>
+                <h2>${inventory.colony.name}</h2>
+                <div>${inventory.mineralAmount} tons of ${inventory.mineral.name}</div>
             `
         }
     }).join("")
