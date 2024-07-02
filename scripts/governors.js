@@ -6,9 +6,10 @@ import { setColonyId } from "./TransientState.js";
 
 //define a function to get HTML for governor select element
 
+
 export const governorsList = async () => {
     //add change event listener handleGovernorChoice
-    document.addEventListener("change", handleGovernorChoice)
+    
     //save governor data to a varaible
     const governors = await getGovernors()
 
@@ -35,7 +36,7 @@ export const governorsList = async () => {
 }
         
 
-   
+
 
 
     
@@ -50,3 +51,8 @@ const handleGovernorChoice = async (e) => {
 
 }
     
+document.addEventListener("change", handleGovernorChoice)
+
+const displayGovColonyMinerals = () => {
+    
+}

@@ -22,7 +22,7 @@ const render = async () => {
     </div>
     
     <div id="facility-container">
-        ${await facilityList()}
+        ${await renderFacilityList()}
         <div id="facilityMineralContainer">
             <h2>Facility Minerals</h2>
         </div>
@@ -45,6 +45,10 @@ document.addEventListener("stateChanged", () => {
     
 //   render();
 });
+
+export const renderFacilityList = async () => {
+    return await facilityList()
+}
 
 
 
