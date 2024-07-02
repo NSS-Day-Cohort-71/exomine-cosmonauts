@@ -3,168 +3,115 @@
 //mineralId = 0
 //mineralAmount = 0
 
-import { getColonyMinerals } from "./managers/colonyMineralsManager.js"
-
-export let colonyState = {
-    "id": 0,
-    "colonyId": 0,
-    "mineralId": 0,
-    "mineralAmount": 0
-}
+export const colonyState = {
+  id: 0,
+  colonyId: 0,
+  mineralId: 0,
+  mineralAmount: 0,
+};
 
 //initial facilityMinerals
 //facilityId = 0
 //mineralId = 0
-//mineralAmount = 0 
+//mineralAmount = 0
 
 export const facilityState = {
-    "id": 0,
-    "facilityId": 0,
-    "mineralId": 0,
-    "mineralAmount": 0
-}
+  id: 0,
+  facilityId: 0,
+  mineralId: 0,
+  mineralAmount: 0,
+};
 
 export const setColonyId = (id) => {
-    colonyState.colonyId = id
-}
+  colonyState.colonyId = id;
+};
 
 export const setColonyMineralId = (id) => {
-    colonyState.id = id
-}
+  colonyState.id = id;
+};
 
 export const setColonyMineralAmount = (amount) => {
-    colonyState.mineralAmount = parseInt(amount)
-}
+  colonyState.mineralAmount = parseInt(amount);
+};
 
 export const setFacilityId = (id) => {
-    facilityState.facilityId = id
-}
+  facilityState.facilityId = id;
+};
 
 export const setFacilityMineralId = (id) => {
-    facilityState.id = id
-}
+  facilityState.id = id;
+};
 
 export const setFacilityMineralAmount = (amount) => {
-    facilityState.mineralAmount = amount
-}
+  facilityState.mineralAmount = amount;
+};
 
 export const setMineralId = (id) => {
-    colonyState.mineralId = parseInt(id)
-    facilityState.mineralId = parseInt(id)
-    console.log(colonyState)
-    console.log(facilityState)
-}
+  colonyState.mineralId = parseInt(id);
+  facilityState.mineralId = parseInt(id);
+  console.log(colonyState);
+  console.log(facilityState);
+};
 
 export const incrementColonyMineralAmount = () => {
-    colonyState.mineralAmount++
-}
+  colonyState.mineralAmount++;
+};
 
 export const decrementFacilityMineralAmount = () => {
-    facilityState.mineralAmount--
-}
-
+  if (facilityState.mineralAmount > 0) {
+    facilityState.mineralAmount--;
+  }
+  console.log(facilityState);
+};
 
 export const setFacility = (facilityId) => {
-    state.selectedFacility = facilityId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
-}
+  state.selectedFacility = facilityId;
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+};
 
-// export const purchaseMineral = async () => {
-//     // 'POST' fetch method is used to create a new resource
-//     // 'PUT' fetch method is used to update an existing resource
-//     // OR create a resource if it does not exist at a specific URL
-//     const colonyMineralPutOptions = {
-//         method: "PUT",
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify(colonyState)
-//     }
+export const purchaseMineral = async () => {
+  // 'POST' fetch method is used to create a new resource
+  // 'PUT' fetch method is used to update an existing resource
+  // OR create a resource if it does not exist at a specific URL
+  decrementFacilityMineralAmount();
 
-//     const apiColonyMineralURL = `http://localhost:8088/colonyMinerals/${colonyState.id}`
+  const colonyMineralPutOptions = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(colonyState),
+  };
 
-//     const colonyMineralPutOptionsFetch = await fetch(
-//         apiColonyMineralURL,
-//         colonyMineralPutOptions
-//     )
-//     // create 'PUT' request for facilityMineralState
-//     const facilityMineralPutOptions = {
-//         method: 'PUT',
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify(facilityState)
-//     }
+  const apiColonyMineralURL = `http://localhost:8088/colonyMinerals/${colonyState.id}`;
 
-//     const apiFacilityMineralURL = `http://localhost:8088/facilityMinerals/${facilityState.id}`
-//     const facilityMineralPutOptionsFetch = await fetch(
-//         apiFacilityMineralURL,
-//         facilityMineralPutOptions
-//     )
+  await fetch(apiColonyMineralURL, colonyMineralPutOptions);
 
-//     // 'PUT' request for colonyMineralState
-    
-//     /*
-//         Does the chosen governor's colony already own some of this mineral?
-//             - If yes, what should happen?
-//             - If no, what should happen?
+  // create 'PUT' request for facilityMineralState
+  const facilityMineralPutOptions = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(facilityState),
+  };
 
-//         Defining the algorithm for this method is traditionally the hardest
-//         task for teams during this group project. It will determine when you
-//         should use the method of POST, and when you should use PUT.
+  const apiFacilityMineralURL = `http://localhost:8088/facilityMinerals/${facilityState.id}`;
+  await fetch(apiFacilityMineralURL, facilityMineralPutOptions);
 
-//         Only the foolhardy try to solve this problem with code.
-//     */
+  // 'PUT' request for colonyMineralState
 
+  /*
+        Does the chosen governor's colony already own some of this mineral?
+            - If yes, what should happen?
+            - If no, what should happen?
 
+        Defining the algorithm for this method is traditionally the hardest
+        task for teams during this group project. It will determine when you
+        should use the method of POST, and when you should use PUT.
 
-//     document.dispatchEvent(new CustomEvent("stateChanged"))
-// }
+        Only the foolhardy try to solve this problem with code.
+    */
 
-
-export const purchseFromSpaceCart = async () => {
-    const colonyMinerals = await getColonyMinerals()
-
-    const inventory = colonyMinerals.map(inventory => inventory.mineralId)
-
-    if (!inventory.includes(colonyState.mineralId)) {
-        colonyState = {
-            "colonyId": colonyState.colonyId,
-            "mineralId": colonyState.mineralId,
-            "mineralAmount": 1
-        }
-
-        const colonyMineralPostOptions = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(colonyState)
-        }
-
-        const colonyPostResponse = await fetch("http://localhost:8088/colonyMinerals", colonyMineralPostOptions)
-        
-    } else {
-        const colonyMineralPutOptions = {
-            method: "Put",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(colonyState)
-        }
-
-        const colonyPutResponse = await fetch(`http://localhost:8088/colonyMinerals/${colonyState.id}`, colonyMineralPutOptions)
-    }
-
-    const facilityMineralPutOptions = {
-        method: 'PUT',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(facilityState)
-    }
-
-    const facilityPutResponse = await fetch(`http://localhost:8088/facilityMinerals/${facilityState.id}`, facilityMineralPutOptions)
-
-    document.dispatchEvent(new CustomEvent("stateChanged"))
-}
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+};
