@@ -3,7 +3,6 @@ import { displayFacilityList, facilityList } from "./facilities.js";
 import { displayColonyMineralList, governorsList } from "./governors.js";
 import { spaceCartElement } from "./spaceCart.js";
 
-//facility select html
 
 //<h2 id='colonyMinerals">Colony Minerals</h2>
 

@@ -69,58 +69,6 @@ export const setFacility = (facilityId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-// export const purchaseMineral = async () => {
-//     // 'POST' fetch method is used to create a new resource
-//     // 'PUT' fetch method is used to update an existing resource
-//     // OR create a resource if it does not exist at a specific URL
-//     const colonyMineralPutOptions = {
-//         method: "PUT",
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify(colonyState)
-//     }
-
-//     const apiColonyMineralURL = `http://localhost:8088/colonyMinerals/${colonyState.id}`
-
-//     const colonyMineralPutOptionsFetch = await fetch(
-//         apiColonyMineralURL,
-//         colonyMineralPutOptions
-//     )
-//     // create 'PUT' request for facilityMineralState
-//     const facilityMineralPutOptions = {
-//         method: 'PUT',
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify(facilityState)
-//     }
-
-//     const apiFacilityMineralURL = `http://localhost:8088/facilityMinerals/${facilityState.id}`
-//     const facilityMineralPutOptionsFetch = await fetch(
-//         apiFacilityMineralURL,
-//         facilityMineralPutOptions
-//     )
-
-//     // 'PUT' request for colonyMineralState
-    
-//     /*
-//         Does the chosen governor's colony already own some of this mineral?
-//             - If yes, what should happen?
-//             - If no, what should happen?
-
-//         Defining the algorithm for this method is traditionally the hardest
-//         task for teams during this group project. It will determine when you
-//         should use the method of POST, and when you should use PUT.
-
-//         Only the foolhardy try to solve this problem with code.
-//     */
-
-
-
-//     document.dispatchEvent(new CustomEvent("stateChanged"))
-// }
-
 
 export const purchseFromSpaceCart = async () => {
     const colonyMinerals = await getColonyMinerals()

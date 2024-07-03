@@ -4,7 +4,6 @@ import { colonyMineralList } from "./colonyMinerals.js";
 import { getGovernors } from "./managers/governorManager.js";
 import { setColonyId } from "./TransientState.js";
 
-//define a function to get HTML for governor select element
 
 
 export const governorsList = async () => {

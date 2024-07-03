@@ -32,3 +32,5 @@ const clearMineralsInCart = () => {
     const mineralsInCart = document.getElementById("mineralsInCart")
     mineralsInCart.innerHTML = ""
 }
+
+//comment

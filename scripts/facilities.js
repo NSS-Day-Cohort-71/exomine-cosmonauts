@@ -30,12 +30,7 @@ export const facilityList = async () => {
     //return html
     return html
 }
-    
 
-//define event listener
-    //if target name === facility
-    //setFacility(parseInt facilityId))
-    //invoke getFacilityMinerals()
 
 const handleFacilityChoice = async (e) => {
     if (e.target.name === "facility") {

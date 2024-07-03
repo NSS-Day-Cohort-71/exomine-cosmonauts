@@ -3,7 +3,6 @@ import { facilityState, setMineralId } from "./TransientState.js";
 
 export const facilityMineralList = async () => {
   document.addEventListener("change", handleMineralChoice);
-  //set facilityMinerals to variable
   const facilityMinerals = await getFacilityMinerals();
 
 
