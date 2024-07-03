@@ -18,8 +18,9 @@ export const spaceCartElement = async () => {
 };
 
 const handlePurchaseMineralClick = async (e) => {
+    const facilityMineralInput = document.querySelector('input[name="facilityMineral"]')
 
-    if (e.target.id === "purchaseMineral") {
+    if (e.target.id === "purchaseMineral" && facilityMineralInput.checked === true) {
         incrementColonyMineralAmount()
         purchseFromSpaceCart()
         clearSpaceCart()
