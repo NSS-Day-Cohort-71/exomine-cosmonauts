@@ -106,37 +106,37 @@
       "id": 1,
       "facilityId": 1,
       "mineralId": 1,
-      "mineralAmount": 99
+      "mineralAmount": 97
     },
     {
       "id": 2,
       "facilityId": 2,
       "mineralId": 2,
-      "mineralAmount": 182
+      "mineralAmount": 180
     },
     {
       "id": 3,
       "facilityId": 3,
       "mineralId": 3,
-      "mineralAmount": 278
+      "mineralAmount": 265
     },
     {
       "id": 4,
       "facilityId": 4,
       "mineralId": 2,
-      "mineralAmount": 392
+      "mineralAmount": 383
     },
     {
       "id": 5,
       "facilityId": 5,
       "mineralId": 5,
-      "mineralAmount": 490
+      "mineralAmount": 488
     },
     {
       "id": 6,
       "facilityId": 6,
       "mineralId": 6,
-      "mineralAmount": 597
+      "mineralAmount": 594
     }
   ],
   "minerals": [
@@ -188,7 +188,7 @@
       "id": 4,
       "colonyId": 4,
       "mineralId": 3,
-      "mineralAmount": 4015
+      "mineralAmount": 4016
     },
     {
       "id": 5,
@@ -199,8 +199,8 @@
     {
       "id": 6,
       "colonyId": 6,
-      "mineralId": 2,
-      "mineralAmount": 6024
+      "mineralId": 3,
+      "mineralAmount": 6026
     },
     {
       "id": 7,
@@ -217,26 +217,44 @@
     {
       "id": 9,
       "colonyId": 3,
-      "mineralId": 3,
-      "mineralAmount": 4
+      "mineralId": 2,
+      "mineralAmount": 7
     },
     {
       "id": 10,
       "colonyId": 2,
-      "mineralId": 5,
-      "mineralAmount": 4
+      "mineralId": 3,
+      "mineralAmount": 6
     },
     {
       "id": 11,
       "colonyId": 5,
-      "mineralId": 5,
-      "mineralAmount": 2
+      "mineralId": 3,
+      "mineralAmount": 15
     },
     {
+      "id": 12,
       "colonyId": 1,
+      "mineralId": 2,
+      "mineralAmount": 9
+    },
+    {
+      "colonyId": 4,
       "mineralId": 0,
       "mineralAmount": 1,
-      "id": 12
+      "id": 13
+    },
+    {
+      "colonyId": 5,
+      "mineralId": 5,
+      "mineralAmount": 2,
+      "id": 14
+    },
+    {
+      "colonyId": 6,
+      "mineralId": 1,
+      "mineralAmount": 2,
+      "id": 15
     }
   ]
 }
