@@ -1,5 +1,5 @@
+
 import {
-  decrementFacilityMineralAmount,
   incrementColonyMineralAmount,
   purchseFromSpaceCart,
 } from "./TransientState.js";
@@ -17,25 +17,20 @@ export const spaceCartElement = async () => {
     `;
 };
 
-const handlePurchaseMineralClick = (e) => {
+const handlePurchaseMineralClick = async (e) => {
 
     if (e.target.id === "purchaseMineral") {
         incrementColonyMineralAmount()
-        decrementFacilityMineralAmount()
         purchseFromSpaceCart()
         clearSpaceCart()
-        clearMineralsInCart()
+        
     }
 }
 
-const clearSpaceCart = () => {
+export const clearSpaceCart = () => {
     const mineralsInCart = document.querySelector('#mineralsInCart')
     mineralsInCart.innerHTML = ""
 }
 
-const clearMineralsInCart = () => {
-    const mineralsInCart = document.getElementById("mineralsInCart")
-    mineralsInCart.innerHTML = ""
-}
 
-//comment
+

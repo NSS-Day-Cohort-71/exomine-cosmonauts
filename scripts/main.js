@@ -1,12 +1,9 @@
-//governor select html
+
 import { displayFacilityList, facilityList } from "./facilities.js";
-import { displayColonyMineralList, governorsList } from "./governors.js";
+import { displayColonyMineralList, governorsList, handleGovernorChoice } from "./governors.js";
 import { spaceCartElement } from "./spaceCart.js";
 
 
-//<h2 id='colonyMinerals">Colony Minerals</h2>
-
-//------
 
 const render = async () => {
   const mainHTML = document.querySelector("#main-container");
@@ -31,13 +28,15 @@ const render = async () => {
 `;
 };
 
-//first render
+
 render();
 
 document.addEventListener("stateChanged", async () => {
     await displayFacilityList()
     await displayColonyMineralList()
 });
+
+
 
 
 
