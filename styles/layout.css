@@ -1,6 +1,9 @@
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
     background-color: rgb(29, 16, 97);
     margin: 0;
@@ -13,7 +16,6 @@ h1 {
 }
 
 h2 {
-    /* color: rgb(249, 216, 108); */
     color: #f7ad2d;
     text-shadow: 1px 2px rgb(88, 58, 235);
 }
@@ -28,11 +30,12 @@ header {
 }
 
 #governor-colony-container {
-    height: 200px;
+    /* Remove fixed height to allow growth */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 #governor-label {
@@ -56,6 +59,11 @@ header {
 
 #colonyMineralContainer {
     color: white;
+    /* Ensure the container can grow with its content */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #facility-container {
@@ -63,6 +71,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 #facility-label {
@@ -77,7 +86,6 @@ header {
     padding: 5px 20px;
     background-color: rgb(38, 240, 173);
 }
-
 
 #facilitySelect:hover {
     cursor: pointer;
@@ -103,8 +111,6 @@ header {
 #space-cart-container h2 {
     color: #f7ad2d;
     font-size: 40px;
-    /* text-shadow: rgb(88, 58, 235); */
-    /* margin: 10px 0; */
     height: 100px;
     text-shadow: 2px 2px rgb(88, 58, 235);
 }
@@ -112,23 +118,16 @@ header {
 #mineralsInCart {
     font-size: 30px;
     font-weight: bold;
-    /* color:rgb(29, 16, 97); */
-    /* color: rgb(88, 58, 235); */
     color: white;
     height: 100px;
-    /* box-shadow: 2px 4px 6px rgb(88, 58, 235); */
 }
 
 #purchaseMineral {
     max-width: 40%;
-    /* background-color: rgb(63, 225, 187); */
     background-color: aquamarine;
-    /* background-color: rgb(0, 229, 255); */
-    /* border: 1px solid rgb(247, 173, 45); */
     border: none;
     font-weight: bold;
     font-size: 25px;
-    /* color: rgb(29, 16, 97); */
     color: rgb(88, 58, 235);
     padding: 8px 30px;
     border-radius: 4px;
@@ -138,6 +137,5 @@ header {
 
 #purchaseMineral:hover {
     cursor: pointer;
-    background-color:#f7ad2d;
+    background-color: #f7ad2d;
 }
-
