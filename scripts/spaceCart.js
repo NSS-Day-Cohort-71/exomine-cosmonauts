@@ -19,6 +19,7 @@ const handlePurchaseMineralClick = (e) => {
         decrementFacilityMineralAmount()
         purchseFromSpaceCart()
         clearSpaceCart()
+        clearMineralsInCart()
     }
 }
 
@@ -27,3 +28,7 @@ const clearSpaceCart = () => {
     mineralsInCart.innerHTML = ""
 }
 
+const clearMineralsInCart = () => {
+    const mineralsInCart = document.getElementById("mineralsInCart")
+    mineralsInCart.innerHTML = ""
+}

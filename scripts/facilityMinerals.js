@@ -11,7 +11,7 @@ export const facilityMineralList = async () => {
     .filter(facility => facilityState.facilityId === facility.facilityId)
     .reduce((html, facility) => {
         if (!html) {
-            html += `<h2>${facility.facility.name}</h2>`;
+            html += `<h2 class="facility-header">${facility.facility.name}</h2>`;
         }
         if (facility.mineralAmount === 0) {
             html += `<div><p>${facility.mineralAmount} tons of ${facility.mineral.name}</p></div>`;
