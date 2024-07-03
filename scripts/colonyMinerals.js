@@ -1,13 +1,3 @@
-//When a governor is selected
-
-//get the colony that the governor belongs to
-
-//Print colony Name
-
-//list mineral inventory
-//-------------------------------
-
-
 //import colonyMinerals data from manager
 import { getColonyMinerals } from "./managers/colonyMineralsManager.js";
 import { colonyState } from "./TransientState.js";
