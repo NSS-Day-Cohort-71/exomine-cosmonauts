@@ -6,18 +6,24 @@
 
 body {
     background-color: rgb(29, 16, 97);
+    /* background-color: rgb(32, 13, 139); */
     margin: 0;
 }
 
 h1 {
-    color: rgb(29, 16, 97);
+    /* color: rgb(29, 16, 97); */
+    color: rgb(53, 21, 210);
+    /* color: purple; */
     font-size: 60px;
     text-shadow: 1px 1px #fbc25e;
+    text-shadow: 1px 1px rgb(29, 16, 97);
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
 }
 
 h2 {
-    color: #f7ad2d;
-    text-shadow: 1px 2px rgb(88, 58, 235);
+    color: orange;
 }
 
 header {
@@ -30,7 +36,7 @@ header {
 }
 
 #governor-colony-container {
-    /* Remove fixed height to allow growth */
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,6 +48,7 @@ header {
     display: flex;
     align-items: center;
     gap: 5px;
+    margin-top: 10px;
 }
 
 #governorSelect {
@@ -49,29 +56,73 @@ header {
     margin-top: 5px;
     text-align: center;
     padding: 5px 20px;
-    background-color: rgb(38, 240, 173);
+    /* background-color: rgb(38, 240, 173); */
+    background-color: #fbc25e;
+    color: rgb(32, 13, 139);
 }
 
 #governorSelect:hover {
     cursor: pointer;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
+    background-color: orange;
 }
 
 #colonyMineralContainer {
-    color: white;
-    /* Ensure the container can grow with its content */
-    width: 100%;
+    /* background-color: rgba(116, 93, 231, 0.764);
+    background-color: rgba(116, 93, 231, 0.764); */
+    height: 200px;
+    width: 400px;
+    margin: 20px 0 0 0;
+    /* border: 1px solid purple;
+    border: 1px solid purple; */
+
+}
+
+.colony-header {
+    /* color:rgb(38, 240, 173); */
+    /* color: rgb(255, 0, 72); */
+    color: magenta;
+    margin: 0;
+    padding: 5px 0 5px 0;
+}
+
+.colony-name {
+    color:rgb(38, 240, 173);
+    padding: 4px 10px;
+    border-radius: 3px;
+}
+
+
+#colonyMineralContainer div {
+    /* color: rgb(50, 244, 170);
+    color: #fbc25e; */
+    color: rgb(32, 13, 139);
+    /* background-color:rgb(38, 240, 173); */
+    background-color:rgb(38, 240, 240);
+    /* background-color: purple; */
+    /* background-color: rgba(88, 58, 235, 0.764); */
+    border: 5px solid rgba(116, 93, 231, 0.764);
+    border: 5px solid rgb(88, 58, 235);
+    font-weight: bolder;
+    font-size: 22px;
+    margin: 5px;
+}
+
+#colonyMineralContainer span {
+    font-weight: bold;
+    color: magenta;
+    /* color: rgb(255, 0, 72); */
+}
+
+#facility-container {
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #facility-container {
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    color: rgb(155, 2, 155);
 }
 
 #facility-label {
@@ -81,25 +132,56 @@ header {
 }
 
 #facilitySelect {
+    color: rgb(250, 108, 250);
+    color: rgb(29, 16, 97);
     height: 40px;
     text-align: center;
     padding: 5px 20px;
-    background-color: rgb(38, 240, 173);
+    background-color: rgb(202, 73, 26);
+    background-color: rgb(251, 120, 72);
+    border: none;
 }
 
 #facilitySelect:hover {
     cursor: pointer;
-    background-color: aquamarine;
+    background-color: rgba(187, 3, 187, 0.873);
+    background-color: rgb(247, 102, 49);
 }
 
 #facilityMineralContainer {
+    /* background-color: rgba(88, 58, 235, 0.764); */
+    height: 200px;
+    width: 400px;
+    margin: 30px 0 0 0;
     text-align: center;
-    color: white;
+    /* color: white; */
+}
+
+#facilityMineralContainer div {
+    /* color: rgb(50, 244, 170);
+    color: #fbc25e; */
+    color: rgb(32, 13, 139);
+    /* background-color: purple; */
+    /* background-color: rgba(88, 58, 235, 0.764); */
+    background-color: rgb(155, 2, 155);
+    background-color: rgb(196, 27, 196);
+    border: 5px solid rgb(196, 27, 196);
+    border: 5px solid rgb(155, 2, 155);
+    border: 5px solid rgb(88, 58, 235);
+    font-weight: bolder;
+    font-size: 22px;
+    margin: 5px;
+}
+
+#facilityMineralContainer span {
+    font-weight: bold;
+    color: rgb(38, 240, 240);
 }
 
 #space-cart-container {
-    background-image: url('../images/spaceMinerals5.jpg');
+    background-image: url('../images/SpaceMinerals12.png');
     background-size: cover;
+    /* background-color: rgba(88, 58, 235, 0.764); */
     width: 100%;
     min-height: 300px;
     display: flex;
@@ -110,25 +192,54 @@ header {
 
 #space-cart-container h2 {
     color: #f7ad2d;
+    color: whitesmoke;
     font-size: 40px;
-    height: 100px;
+    /* text-shadow: rgb(88, 58, 235); */
+    /* margin: 10px 0; */
+    height: 60px;
     text-shadow: 2px 2px rgb(88, 58, 235);
 }
 
 #mineralsInCart {
     font-size: 30px;
     font-weight: bold;
-    color: white;
-    height: 100px;
+    /* color:rgb(29, 16, 97); */
+    /* color: rgb(88, 58, 235); */
+    color: rgb(253, 181, 0);
+    height: 150px;
+    width: 365px;
+    text-align: center;
+    background-color: rgba(88, 58, 235, 0.644);
+    display: flex;
+    align-items: center;
+    /* box-shadow: 2px 4px 6px rgb(88, 58, 235); */
+}
+
+#mineralsInCart:hover {
+    /* font-size: 32px; */
+    font-weight: bold;
+    color: orange;
+    /* color:rgb(29, 16, 97); */
+    /* color: rgb(88, 58, 235); */
+    height: 150px;
+    width: 365px;
+    text-align: center;
+    background-color: rgba(88, 58, 235, 0.737);
+    display: flex;
+    align-items: center;
 }
 
 #purchaseMineral {
-    max-width: 40%;
-    background-color: aquamarine;
+    width: 300px;
+    /* background-color: rgb(63, 225, 187); */
+    background-color: rgba(70, 249, 189, 0.877);
+    /* background-color: rgb(0, 229, 255); */
+    /* border: 1px solid rgb(247, 173, 45); */
     border: none;
     font-weight: bold;
     font-size: 25px;
-    color: rgb(88, 58, 235);
+    /* color: rgb(29, 16, 97); */
+    color: rgb(68, 32, 248);
     padding: 8px 30px;
     border-radius: 4px;
     margin: 10px 0;
@@ -137,5 +248,11 @@ header {
 
 #purchaseMineral:hover {
     cursor: pointer;
-    background-color: #f7ad2d;
+    background-color:#f7ad2d;
+    background-color: orange;
+}
+
+.facility-header {
+    color: rgb(196, 27, 196);
+    color: rgb(0, 221, 255);
 }

@@ -4,7 +4,6 @@ import { colonyMineralList } from "./colonyMinerals.js";
 import { getGovernors } from "./managers/governorManager.js";
 import { setColonyId } from "./TransientState.js";
 
-//define a function to get HTML for governor select element
 
 
 export const governorsList = async () => {
@@ -17,9 +16,9 @@ export const governorsList = async () => {
                     //<option disabled selected>Choose governor</option>
     let html = `
             <div id="governor-label">
-                <h2>Choose a governor</h2>
+                <h2>Choose a Governor</h2>
                 <select name="governors" id="governorSelect">
-                <option disabled selected>Choose a governor</option>
+                <option disabled selected>(SELECT)</option>
     `
     //map governors array
     const governorHTML = governors.map(governor => {

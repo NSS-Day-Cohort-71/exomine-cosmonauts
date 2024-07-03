@@ -18,14 +18,24 @@ export const spaceCartElement = async () => {
 };
 
 const handlePurchaseMineralClick = (e) => {
-  if (e.target.id === "purchaseMineral") {
-    incrementColonyMineralAmount();
-    purchseFromSpaceCart();
-    clearSpaceCart();
-  }
-};
+
+    if (e.target.id === "purchaseMineral") {
+        incrementColonyMineralAmount()
+        decrementFacilityMineralAmount()
+        purchseFromSpaceCart()
+        clearSpaceCart()
+        clearMineralsInCart()
+    }
+}
 
 const clearSpaceCart = () => {
-  const mineralsInCart = document.querySelector("#mineralsInCart");
-  mineralsInCart.innerHTML = "";
-};
+    const mineralsInCart = document.querySelector('#mineralsInCart')
+    mineralsInCart.innerHTML = ""
+}
+
+const clearMineralsInCart = () => {
+    const mineralsInCart = document.getElementById("mineralsInCart")
+    mineralsInCart.innerHTML = ""
+}
+
+//comment

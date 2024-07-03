@@ -12,9 +12,9 @@ export const facilityList = async () => {
                     //<option disabled selected>Choose facility</option>
     let html = `
             <div id="facility-label">
-                <h2>Choose facility</h2>
+                <h2>Choose a facility</h2>
                 <select id="facilitySelect" name="facility" disabled>
-                <option disabled selected>Choose facility</option>
+                <option disabled selected>(SELECT)</option>
     `
     //map facilitys array
     const facilityHTML = facilities.map(facility => {
@@ -30,12 +30,7 @@ export const facilityList = async () => {
     //return html
     return html
 }
-    
 
-//define event listener
-    //if target name === facility
-    //setFacility(parseInt facilityId))
-    //invoke getFacilityMinerals()
 
 const handleFacilityChoice = async (e) => {
     if (e.target.name === "facility") {
