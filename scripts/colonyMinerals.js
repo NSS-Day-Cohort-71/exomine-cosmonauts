@@ -1,12 +1,12 @@
-//import colonyMinerals data from manager
+
 import { getColonyMinerals } from "./managers/colonyMineralsManager.js";
 import { colonyState } from "./TransientState.js";
 
 
-//define colonyMineralList
+
 
 export const colonyMineralList = async () => {
-     //set colonyMinerals to variable
+     
     const colonyMinerals = await getColonyMinerals()
 
 
@@ -15,7 +15,7 @@ export const colonyMineralList = async () => {
     
 
     const colonyMineralHTML = filteredColonyMinerals.map(inventory => {
-        //if transientState.colonyId = colonyMinerals.colonyId
+        
             colonyState.mineralAmount = inventory.mineralAmount
             colonyState.id = inventory.id
             

@@ -1,7 +1,4 @@
-//inital colonyMinerals
-//colonyId = 0
-//mineralId = 0
-//mineralAmount = 0
+
 
 import { getColonyMinerals } from "./managers/colonyMineralsManager.js";
 
@@ -12,10 +9,7 @@ export let colonyState = {
   mineralAmount: 0,
 };
 
-//initial facilityMinerals
-//facilityId = 0
-//mineralId = 0
-//mineralAmount = 0
+
 
 export const facilityState = {
   id: 0,
