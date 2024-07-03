@@ -1,6 +1,6 @@
 //governor select html
 import { displayFacilityList, facilityList } from "./facilities.js";
-import { governorsList } from "./governors.js";
+import { displayColonyMineralList, governorsList } from "./governors.js";
 import { spaceCartElement } from "./spaceCart.js";
 
 //facility select html
@@ -37,6 +37,7 @@ render();
 
 document.addEventListener("stateChanged", async () => {
     await displayFacilityList()
+    await displayColonyMineralList()
 });
 
 
